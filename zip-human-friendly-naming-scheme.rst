@@ -49,4 +49,4 @@ FIXME
 References
 ==========
 
-FIXME
+.. [#RFC2119] `Key words for use in RFCs to Indicate Requirement Levels <https://tools.ietf.org/html/rfc2119>`_

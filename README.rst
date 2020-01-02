@@ -96,4 +96,5 @@ Index of ZIPs
     <tr> <td>1012</td> <td class="left"><a href="zip-1012.rst">Dev Fund to ECC + ZF + Major Grants</a></td> <td>Draft</td>
     <tr> <td>1013</td> <td class="left"><a href="zip-1013.rst">Keep It Simple, Zcashers: 10% to ECC, 10% to ZF</a></td> <td>Draft</td>
     <tr> <td>guide</td> <td class="left"><a href="zip-guide.rst">{Something Short and To the Point}</a></td> <td>Draft</td>
+    <tr> <td>human-friendly-naming-scheme</td> <td class="left"><a href="zip-human-friendly-naming-scheme.rst">Human Friendly Naming Scheme</a></td> <td>Draft</td>
   </table></embed>
