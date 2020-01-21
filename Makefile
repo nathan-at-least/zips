@@ -3,11 +3,12 @@
 # sudo pip install rst2html5
 
 .PHONY: all all-zips protocol
+
+all: all-zips protocol
+
 all-zips:
 	$(MAKE) README.rst
 	$(MAKE) index.html $(addsuffix .html,$(filter-out README,$(basename $(wildcard *.rst))))
-
-all: all-zips protocol
 
 protocol:
 	$(MAKE) -C protocol

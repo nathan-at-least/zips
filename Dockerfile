@@ -3,6 +3,7 @@ FROM debian:latest
 RUN apt-get update \
         && apt-get install -y \
         gawk \
+        git \
         biber \
         latexmk \
         perl \
