@@ -1,7 +1,7 @@
 ::
 
   ZIP: NNNN
-  Title: The Slow Fund
+  Title: The Posterity Fund
   Owners: Nathan Wilcox <nathan+zip@electriccoin.co>
   Status: ???
   Category: Consensus
@@ -26,24 +26,24 @@ The term "current ZEC supply" or simply "supply" refers to the issued ZEC supply
 
 The term "eventual ZEC supply" refers to the issued ZEC supply after issuance reaches 0 ZEC per block, which by consensus rules and social consensus shall never be greater than ``MAX_MONEY`` (FIXME LINK).
 
-The term "Slow Fund" refers to a new chain-wide fund specified in this proposal.
+The term "Posterity Fund" refers to a new chain-wide fund specified in this proposal.
 
 The term "fund" refers to any distinct ZEC balance which (is by definition) governed by consensus rules.
 
-The term "slow fund payout" or simply "payout" refers to transfers out of the slow fund.
+The term "Posterity Fund payout" or simply "payout" refers to transfers out of the Posterity Fund.
 
-The term "slow fund deposit" refers to transfers into the slow fund.
+The term "Posterity Fund deposit" refers to transfers into the Posterity Fund.
 
 
 Abstract
 ========
 
-This proposal introduces a new chain-wide fund called the "Zcash Slow Fund" which aggregates deposits from any number of sources and produces regular small payouts from its total balance to the same recipients as new issuance as part of block rewards. These payouts are constrained by the consensus rules proposed here _and_ by establishing a new socially based precedent that the rate of payouts will not be increased in the future, thus the term "slow". This proposal itself does not specify how funds are deposited into the Slow Fund, although it is accompanied by a companion proposal (FIXME REF) which defines a source of deposits as part of a new transaction fee mechanism. Unlike payouts, there is no social precedent constraining future kinds or amounts of deposits to the fund.
+This proposal introduces a new chain-wide fund called the "Zcash Posterity Fund" which aggregates deposits from any number of sources and produces regular small payouts from its total balance to the same recipients as new issuance as part of block rewards. These payouts are constrained by the consensus rules proposed here _and_ by establishing a new socially based precedent that the rate of payouts will not be increased in the future, thus accumulating the funds for posterity. This proposal itself does not specify how funds are deposited into the Posterity Fund, although it is accompanied by a companion proposal [FIXME REF] which defines a source of deposits as part of a new transaction fee mechanism. Unlike payouts, there is no social precedent constraining future kinds or amounts of deposits to the fund.
 
 Motivation
 ==========
 
-Smoothing out mining rewards over time has both security and ecosystem benefits:
+Smoothing out block rewards over time has both economic and security benefits:
 
 Mitigate Outlier Block Rewards
 ------------------------------
@@ -62,7 +62,7 @@ One solution is to destroy such fees so that miners cannot recoup their costs an
 Mining Continuity During Lulls
 ------------------------------
 
-As issuance rewards decrease, if there are alternating periods of high activity followed by "lull" periods of low activity, rate limited payouts help maintain blockchain security during the lulls by savings from the high activity periods. Here we assume "activity" is anything that deposits funds into the Slow Fund.
+As issuance rewards decrease, if there are alternating periods of high activity followed by "lull" periods of low activity, rate limited payouts help maintain blockchain security during the lulls by savings from the high activity periods. Here we assume "activity" is anything that deposits funds into the Posterity Fund.
 
 By contrast, if miner rewards correspond directly to activity on a short term, only miners with large savings reserves or access to credit will be able to weather the lulls. This leads makes mining less competitive and also reduces certainty about mining capacity for the whole ecosystem.
 
@@ -82,14 +82,14 @@ Consensus nodes are required to track new per-block state:
 
 - `SLOW_FUND_BAL : u64 [zatoshi]`
 
-The state is a single 64 bit integer representing the Slow Fund balance in units of ``zatoshi``, the smallest tracked unit of ZEC. It is safe and potentially convenient to consider all blocks prior to the activation height to have a value of 0 in this field.
+The state is a single 64 bit integer representing the Posterity Fund balance in units of ``zatoshi``, the smallest tracked unit of ZEC. It is safe and potentially convenient to consider all blocks prior to the activation height to have a value of 0 in this field.
 
 .. design_rationale:: 
 
 Block Header Commitments
 ------------------------
 
-Valid block headers are required to commit to the Slow Fund balance.
+Valid block headers are required to commit to the Posterity Fund balance.
 
 .. FIXME:: Look up the arbitrary block state commitment mechanics and plug in appropriately.
 
