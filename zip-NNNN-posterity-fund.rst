@@ -99,7 +99,7 @@ Consensus nodes are required to track new per-block state:
 
 The state is a single 64 bit integer at any given block height, ``H``, representing the Posterity Fund balance at that height, ``H``. This state represents units of ``zatoshi``, the smallest tracked unit of ZEC. It is safe and potentially convenient to consider all blocks prior to the activation height to have a value of 0 in this field.
 
-.. annotation:: Design Rationale
+.. admonition:: Design Rationale
 
     A single integer per block is sufficient state to represent accumulation in the form of deposits, and payouts which are constrained to a simple exponential decay formula. The cost and complexity overhead for fully validing nodes is very modest.
 
@@ -110,7 +110,7 @@ Valid block headers are required to commit to the Posterity Fund balance.
 
 .. FIXME:: Look up the arbitrary block state commitment mechanics and plug in appropriately.
 
-.. annotation:: Design Rationale
+.. admonition:: Design Rationale
 
     Requiring block-header-rooted commitments of global fund balances such as the Posterity Fund ensures that any consensus deviating bugs in accounting of this balance are immediately detected in the earliest impacted block. This is a "belt-and-suspenders" safety measure.
 
@@ -123,7 +123,7 @@ Any algorithmic or codified changes to the recipients or proportions
 
  As of NU4, newly issued ZEC in block rewards are distributed proportionally with 80% to the block miner, then the 20% remainder distributed as part of the ZIP-1014 Dev Fund to the Bootstrap Foundation, the Zcash Foundation, and the Zcash Open Major Grants organization.
 
-.. annotation:: Design Rationale
+.. admonition:: Design Rationale
 
     This ZIP is explicitly agnostic as to the recipients of block rewards so that acceptance or adoption of the Posterity Fund does not introduce or bundle reallocation decisions with the primary proposal.
 
